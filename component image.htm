@@ -1,0 +1,243 @@
+<!Doctype Html>
+
+<html>
+
+<head>
+
+
+ <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script>
+   function onSubmit(token) {
+     document.getElementById("demo-form").submit();
+   }
+ 
+ <button class="g-recaptcha" 
+        data-sitekey="reCAPTCHA_site_key" 
+        data-callback='onSubmit' 
+        data-action='submit'>Submit</button> </script>
+
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <form>
+  <label for="file-upload" class="custom-file-upload">
+  <i class="fa fa-cloud-upload"></i>
+  </label>
+  <input id="file-upload" name='upload_cont_img' type="file" style="display:none;">
+  </form>
+
+<script>
+import axios from 'axios';
+import React,{useState}from
+"react"
+import
+'bootstrap/dist/css/bootstrap.min.css';
+
+const GETFORM_FORM_ENDPOINT="YOUR-FORM-ENDPOINT";
+
+function Form(){
+const[formStatus,setFormStatus]
+=useState(false);
+const[query,setQuery]=
+useState({
+name:"Puseletso"
+
+});
+
+const handleFileChange=()=>(e)
+=>{
+setQuery((prevState)=>({
+...prevState,
+files:e.target.files[0]
+}));
+};
+
+const handleChange=()=>
+{
+const name=e.target.name;
+const value=e.target.value;
+setQuery((prevState)=>({
+...prevState,
+[name]:value
+}));
+};
+
+const handleSubmit=(e)=>{
+e.preventDefault();
+const formData=new
+FormData();
+
+Object.entries(query).forEach(([key,
+value])=>{
+formData.append(key,
+value);
+});
+
+axios
+.post(
+GETFORM_FORM_ENDPOINT,
+formData,
+{headers:{Accept:
+"application/json"}}
+)
+.then(function(response)
+{
+setFormStatus(true);
+setQuery({
+name:"Puseletso",
+email:"puseletso55@gmail.com",
+});
+console.log(response);
+})
+.catch(function(error){
+console.log(error);
+});
+;
+
+}
+export default Form
+</script>
+
+
+
+<style>
+
+
+
+body{
+background-color:silver
+}
+
+p{
+color:black;
+font-size:15px;
+}
+</style>
+
+
+
+<link rel="manifest"
+href="manifest.json">
+<meta name="mobile-web-app-capable"content="yes"/>
+<meta name="apple-mobile-web-app-capable"content="yes"/>
+<meta name="apple-mobile-web-app-title"content="Vehicle Engine Inspection"/>
+<meta name="application-name"content="Vehicle Engine Inspection"/>
+<meta name="msapplication-starturl"content="/index.html"/>
+<meta name="viewport"
+content="width=device-width,initial-scale=1,shrink-to-fit=no"/>
+
+<meta charset="utf-8"/>
+<meta name="viewport"
+content="width=device-width, initial-scale=1"/>
+<title>Vehicle Engine</title>
+
+<script src="main.js"></script>
+<title>Vehicle Inspection</title>
+
+
+<script language='JavaScript' type='text/JavaScript'>
+//Made by 1st JavaScript Editor
+//http://www.yaldex.com
+function fifteenth(sixteenth){	var seventeenth = Array("FirstName", "LastName");	var eighteenth = Array("First Name", "Last Name");	var nineteenth = "Please complete these fields:\n";	var twentieth = nineteenth.length;	for (var first2 = 0; first2 < seventeenth.length; first2++){		var second2 = sixteenth.elements[seventeenth[first2]];
+if (second2){			switch(second2.type){			case "select-one":
+if (second2.selectedIndex == -1 || second2.options[second2.selectedIndex].text == ""){					nineteenth += " - " + eighteenth[first2] + "\n";				}				break;			case "select-multiple":
+if (second2.selectedIndex == -1){					nineteenth += " - " + eighteenth[first2] + "\n";				}				break;			case "text":			case "textarea":
+if (second2.value == "" || second2.value == null){					nineteenth += " - " + eighteenth[first2] + "\n";				}				break;			default:			}
+if (second2.type == undefined){				var third2 = false;				for (var fourth2 = 0; fourth2 < second2.length; fourth2++){
+if (second2[fourth2].checked){						third2 = true;					}				}
+if (!third2){					nineteenth += " - " + eighteenth[first2] + "\n";				}			}		}	}
+if (nineteenth.length == twentieth){		return true;	}else{		alert(nineteenth);		return false;	}}
+</script>
+<script>
+let name='iSANUSI';</script>
+<h1><font color="windowtext" size="5"face="Imprint MT Shadow">iSANUSI Vehicle Engine Inspection!</font></h1>
+<style>
+p{
+color: royal blue;
+font-family:'comic sans Ms', bold;
+font-size: zem;
+}
+</style>
+
+<p><b><font color="windowtext" size="3"face="Modern No. 20">iSanusi Industrial AR Technology
+
+The Foreseer...</font></b></p>
+
+
+</head>
+
+<body>
+ <header id="Component Image"></header>
+<div id="root">
+
+<script>import { initializeApp } from 'firebase/app';
+
+// TODO: Replace the following with your app's Firebase project configuration
+const firebaseConfig = {
+  //...
+};
+
+const app = initializeApp(firebaseConfig);
+</script>
+
+
+<align center>
+<b>Vehicle Faulty Component(s)</b> <br>
+<b>Damaged Component(s)</b> <br>
+
+<head>
+<style>
+div.gallery{
+margin:5px;
+border:1px solid #ccc;
+float:left;
+width:180px;
+}
+
+div.gallery:hover{
+border:1px solid #777;
+}
+
+div.gallery img{
+width:100%;
+height:auto;
+}
+div.desc{
+padding:15px;
+text-align:center;
+}
+</style>
+</head>
+</div>
+
+<body>
+<div id="root">
+
+<p><b>Click on the "<font color="windowtext" size="3" face="Mongolian Baiti">Choose Image File</font>" button to upload a file:</b></p>
+
+<form
+action="/action_page.php">
+<input type="button"
+value='Upload Image'
+id="componentImage"
+name="imagename">
+<input
+type="submit">
+</form>
+
+
+<form>
+<input type=button value='Prev' onClick="window.location.href='<a href="file:///C:/Users/user/Desktop/Vehicle%20Engine/component%20image.htm">
+    <input type=button value='Next' onClick="window.location.href='<a href="file:///C:/Users/user/Desktop/Vehicle%20Engine/inspector%20notes.htm"></a><link><a href="http://127.0.0.1:5500" class="inspector notes"></a></link>
+</form>
+</align center>
+
+<footer><p>
+ <a href="contact.php">
+ All rights reserved. Copyrights 2022</p>
+</footer>
+</body>
+</div>
+
+
+</html>
+};

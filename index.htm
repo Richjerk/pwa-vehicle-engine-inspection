@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+ <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script>
+   function onSubmit(token) {
+     document.getElementById("demo-form").submit();
+   }
+ 
+ <button class="g-recaptcha" 
+        data-sitekey="reCAPTCHA_site_key" 
+        data-callback='onSubmit' 
+        data-action='submit'>Submit</button></script>
+
+<script>
+//function to store user name and password
+function store () {
+     var inputUsername= document.getElementById("username");
+     var inputPassword= document.getElementById("password");
+     localStorage.setItem("username", inputUsername.value);
+     localStorage.setItem("password", inputPassword.value);
+    };
+
+
+    //function to sign in
+    function login() {
+ var inputUsername = localStorage.getItem("username");
+ var inputPassword = localStorage.getItem("password");
+
+ if (username != "undefined" || username != "null" || password != "undefined" || password !="null")
+ {
+    document.getElementByID('welcomeMessage').innerHTML = "Welcome " + username + "!";
+    } else
+     document.getElementById('welcomeMessage').innerHTML = "Hello!";
+     }
+</script>
+
+<title></title>
+
+</head>
+
+<body>
+<div id="root">
+<nav>
+<p>Home</p>
+<a href="vehicle engine login.htm">Login</a>
+<a href="image.html">Upload Image</a>
+<a href="Vehicle Form.html">Vehicle Form</a>
+<a href="diagnostic scan.htm">Diagnostic Scan</a>
+<a href="component image.htm">Component Image</a>
+<a href="inspector notes.htm">Inspector Notes</a>
+
+<script>import { initializeApp } from 'firebase/app';
+
+// TODO: Replace the following with your app's Firebase project configuration
+const firebaseConfig = {
+  //...
+};
+
+const app = initializeApp(firebaseConfig);
+</script>
+
+<header>
+
+<style>
+
+
+
+body{
+background-color:silver
+}
+
+p{
+color:black;
+font-size:15px;
+}
+</style>
+
+<h1><font color="windowtext" size="5"face="Imprint MT Shadow">iSANUSI Vehicle Engine Inspection!</font></h1>
+<style>
+p{
+color: royal blue;
+font-family:'comic sans Ms', bold;
+font-size: zem;
+}
+</style>
+
+<p><b><font color="windowtext" size="3"face="Modern No. 20">iSanusi Industrial AR Technology
+
+The Foreseer...</font></b></p>
+
+<div class="popup">
+            <h2>Welcome Guest!</h2>
+            <div>
+                <label for="email">Login </label>
+                <input type="text" id="username" value="" />
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" value="" />
+            </div>
+          <input type="button" value="Log In" />
+
+
+            <a class="close" href="#close"></a>
+        </div>
+
+
+         <div class="popup">
+        <h2>Register</h2>
+        <p>Please enter your details here</p>
+        <div>
+            <label for="email">Login (Username)</label>
+            <input type="text" id="username" value="" />
+        </div>
+        <div>
+            <label for="pass">Password</label>
+            <input type="password" id="password" value="" />
+        </div>
+
+        <button onclick="store()" type="button">Sign up </button>   or   <a href="#login_form" id="login_pop">Log In</a>
+
+        <a class="close" href="#close"></a>
+    </div>
+    </div>
+
+    
+    <footer>
+    <a href="contact.php">
+    All rights reserved. Copyrights 2022</footer>
+
+
+</body>
+</div>
+
+</html>
