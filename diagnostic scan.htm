@@ -1,119 +1,28 @@
 <!Doctype Html>
 
-<html>
-<html ng-app="canibus">
-<head>
-
-<style>
-#bkg_image{
-position:relative;
-width:767px;
-height:518px;
-backgroung: url(images/new_engine/Background.jpg) 0 0 no-repeat;
-}
-
-#engine1{
-position:absolute;
-top:9px;
-left:206px;
-}
-</style> 
-
-
- <script src="https://www.google.com/recaptcha/api.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VEHICLE HMI Demo</title>
+    
+     <script src="https://www.google.com/recaptcha/api.js"></script>
   <script>
    function onSubmit(token) {
      document.getElementById("demo-form").submit();
    }
-
+ <script>
  <button class="g-recaptcha" 
         data-sitekey="reCAPTCHA_site_key" 
         data-callback='onSubmit' 
-        data-action='submit'>Submit</button> </script>
+        data-action='submit'>Submit</button><script>
 
 
-<script>
-  src="https://webhook.gatsbyjs.com/hooks/data_source/2b2a7b5f-2ca3-4889-883a-6a2a29726a81">
-  </script>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloydflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
-
-
-<script>
- can;require('node-can');
-const bus=new can.Bus('raw','USBCanAnalyserV7',{
-port:'/dev/tty.wchusbserial14110',
-});
-
-//Initialize bus communication
-bus.run().then(()=>{
-console.log('Bus ready');
-bus.on('message',console.log);
-});
-
-</script>
-
-
-<script>
-const chatService=require('chat-service')
-
-const port=9000
-function onConnect(service,id){
-//Assuming that auth datais passed in a query string.
-let{query}=service.transport.getHandshakeData(id)
-let{userName}=query
-//Actually check auth data.
-//...
-//Return a promise that resolves with a login string.
-return Promise.resolve(userName)
-}
-
-const chatService=newChatService({port},{onConnect})
-process.on('SIGINT',()=>chatService.close().finally(()=>process.exit()))
-
-//The room cofiguration and messages will persist if redis state is
-//used. addRoomwill reject a promise if the room is already created.
-chatService.hasRoom('default').then(hasRoom=>{
-if(!hasRoom){
-return chatService.addRoom('default',{owner:'admin'})
-}
-})
-
-const io=require('socket.io-client')
-
-
-let url='ws://localhost:9000/chat-service'
-let userName='user'// for example and debug
-let token='token' //auth  token
-let opts={query}
-
-
-//connect to a server.
-let socket=io.connect(url,opts)
-
-//Rooms messages handler(own messages are here too).
-socket.on('roomMessage',(room,msg)=>{
-console.log('${msg.author}:${msg.textMessage}')
-})
-
-//Auth success handler.
-socket.on('loginConfirmed',userName=>{
-//Join room named 'default'.
-socket.emit('roomJoin','default',(error,data)=>{
-//Check for a command error.
-if(error){return}
-//Now we will receive 'default' room messages in 'roomMessage' handler.
-//Now we can also send a message to 'default' room:
-socket.emit('roomMessage','default',{textMessage:'Hello!'})
-})
-})
-
-//Auth error handler.
-socket.on('loginRejected',error=>{
-console.error(error)
-})
-</script>
+  <script src=
+  "https://webhook.gatsbyjs.com/hooks/data_source/2b2a7b5f-2ca3-4889-883a-6a2a29726a81"
+  ></script>
 
 
 <script>
@@ -127,77 +36,6 @@ nn.train(input,output)
 <script>
 nn.predict(input)
 </script>
-
-<script>
-import axios from 'axios';
-import React,{useState}from
-"react"
-import
-'bootstrap/dist/css/bootstrap.min.css';
-
-const GETFORM_FORM_ENDPOINT="YOUR-FORM-ENDPOINT";
-
-function Form()
-const[formStatus,setFormStatus]
-=useState(false);
-const[query,setQuery]=
-useState({
-name:"Puseletso"
-});
-
-{
-setQuery((prevState)=>({
-...prevState,
-files:e.target.files[0]
-}));
-};
-
-const handleChange=()=>
-{
-const name=e.target.name;
-const value=e.target.value;
-setQuery((prevState)=>({
-...prevState,
-[name]:value
-}));
-};
-
-const handleSubmit=(e)=>{
-e.preventDefault();
-const formData=new
-FormData();
-
-Object.entries(query).forEach(([key,
-value])=>{
-formData.append(key,
-value);
-});
-
-axios
-.post(
-GETFORM_FORM_ENDPOINT,
-formData,
-{headers:{Accept:
-"application/json"}}
-)
-.then(function(response)
-{
-setFormStatus(true);
-setQuery({
-name:"Puseletso",
-email:"puseletso55@gmail.com",
-});
-console.log(response);
-})
-.catch(function(error){
-console.log(error);
-});
-
-;
-}
-export default Form
-</script>
-
 
 <link rel="manifest"
 href="manifest.json">
@@ -227,14 +65,43 @@ p{
 color:black;
 font-size:15px;
 }
+
+p{
+color:black;
+font-size:15px;
+}
 </style>
 
-<meta charset=�TF-8">
+<link rel="manifest"
+href="manifest.json">
+<meta name="mobile-web-app-capable"content="yes"/>
+<meta name="apple-mobile-web-app-capable"content="yes"/>
+<meta name="apple-mobile-web-app-title"content="Vehicle Engine Inspection"/>
+<meta name="application-name"content="Vehicle Engine Inspection"/>
+<meta name="msapplication-starturl"content="/index.html"/>
+<meta name="viewport"
+content="width=device-width,initial-scale=1,shrink-to-fit=no"/>
+
+<meta charset="utf-8">
 <script src="main.js"></script>
 <title>Vehicle Inspection</title>
 
+<script language="JavaScript" type="Text/JavaScript">
+//Made by 1st JavaScript Editor
+//http://www.yaldex.com
+//Come and get more (free) products
+
+var fifteenth;var sixteenth;var seventeenth;
+function eighteenth(nineteenth,twentieth) {
+seventeenth=eval("document.getElementById('"+nineteenth+"')");sixteenth=twentieth;fifteenth=seventeenth.childNodes[0].nodeValue;seventeenth.childNodes[0].nodeValue=twentieth;}
+function first2() {
+seventeenth.childNodes[0].nodeValue=fifteenth;}
+</script>
+
+
 <script>
-let name='iSANUSI';</script>
+let name='iSANUSI';
+</script>
 <h1><font color="windowtext" size="5"face="Imprint MT Shadow">iSANUSI Vehicle Engine Inspection!</font></h1>
 <style>
 p{
@@ -249,285 +116,228 @@ font-size: zem;
 The Foreseer...</font></b></p>
 
 
- <title>Automation Software</title>
-    <script src="/js/angular.js"></script>
-    <script src="/js/angular-route.js"></script>
-    <script src="/js/angular-animate.js"></script>
-    <script src="/js/canibus.js"></script>
-    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="/css/flat-ui.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/canibus.css">
-  </head>
-  <head>
-    <title>CANiBUS Device Configuration</title>
-  </head>
+    <!--
+    Hello.  Glad you stopped by to check out the source code.  
 
+    Don't hesitate to contact us if you have any questions (support@opcsystems.com)
+    Copyright 2014 Open Automation Software, all rights reserved. 
+    -->
 
-<body>
- <header id="DiagnosticScan"></header>
+    <!-- 3rd party libraries used for this demo -->
+    <script type="text/javascript" src="js/lib/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.numberformatter-1.2.3.min.js"></script>
+    <script type="text/javascript" src="js/lib/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="bootstrap-3.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
+    <script type="text/javascript" src="js/lib/tween-min.js"></script>  
+    <script type="text/javascript" src="js/lib/steelseries-min.js"></script>  
+    <script type="text/javascript" src="js/flot/jquery.flot.js"></script>  
+    <script type="text/javascript" src="js/flot/jquery.flot.time.js"></script>  
+    <script type="text/javascript" src="js/flot/jquery.flot.crosshair.js"></script>  
+ 
+    <!-- HTML HMI library -->
+    <script type="text/javascript" src="js/opc-lib-min.js"></script>
+    
+    <!-- demo-specific scripts -->
+    <script type="text/javascript" src="examples/exGauges.js"></script>
+    <script type="text/javascript" src="examples/exTrend.js"></script>
+    <script type="text/javascript" src="js/demo.js"></script>
+    
+    <!-- 3rd party stylesheets used with script libraries -->
+    <link rel="stylesheet" type="text/css" href="bootstrap-3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/lib/font-awesome.min.css"/> 
+    <link rel="stylesheet" type="text/css" href="js/lib/datatables/css/jquery.dataTables.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/railscasts.min.css">
+
+    <!-- HTML HMI css -->
+    <link rel="stylesheet" type="text/css" href="css/opc-style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/opc-alarm-style.css"/>
+
+    <!-- demo css -->
+    <link rel="stylesheet" type="text/css" href="css/demo-style.css"/>
+
+    <!-- HTML HMI configuration element that sets up server connection -->
+    <script type="text/javascript">
+      OPC_config = {
+        serverURL: 'http://127.0.0.1:5502'
+      };
+    </script>
+  </head>
+  <body>
+   <header id="image"></header>
 <div id="root">
 
-<body>
-<link>
+<script>
+document.getElementById("image.html").innerHTML=
+document.getElementById("Vehicle Form.html").innerHTML=
+document.getElementById("diagnostic scan.htm").innerHTML=
+document.getElementById("inspector notes.htm").innerHTML;
+</script>
+  
+  
+    <div id="header" class='clearfix container'>
 
-<video autoplay>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-2 col-xs-3">
+                <div class="logo"></div>
+              </div>
+              <div class="col-md-8 col-md-offset-2 col-sm-10 col-xs-9">
+                <div class="row" style="margin-top:10px;">
+                  <div class="col-sm-6">
+                    <img class="business-icon" src="https://isanusi.simdif.com/iSanusi_%E2%84%A2_Industrial_Augmented_Reality_Presentation.html"> 
+                    <span class='phone'>+27 63 6292 855</span>
+                  </div>
+                  <div class="col-sm-6">
+                    <img class="https://isanusi.simdif.com/images/public/sd_6221f5f060555.png?no_cache=1646396424"> 
+                    <span class='email'>puseletso55@gmail.com</span>
+                  </div>
+                </div>
+
+                <div class="row" style='margin-bottom:20px;'>
+                  <div class="col-sm-6">
+                    <img class="business-icon" src="https://isanusi.simdif.com/images/public/sd_6203cade06519.png?no_cache=1644419367"> 
+                    <span class='address'>Orange Farm, Gauteng, 1841</span>
+                  </div>
+                  <div class="col-sm-6">
+                                    <div class="header-social test">
+
+                      
+                                          
+                              <a href="isanusi.simdif.com"></i></a>
+
+                        
+                             
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+            
+           <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
 
     <script>
-    const constraints = {
-      video: true,
-    };
-    
-    const video = document.querySelector("video");
-    
-    navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
-      video.srcObject = stream;
-    });
-    </script></video>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "103045188966220");
+      chatbox.setAttribute("attribution", "install_email");
+      chatbox.setAttribute("attribution_version", "biz_inbox");
+    </script>
 
+    <!-- Your SDK code -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v14.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script> 
+
+
+
+
+
+
+
+    </div>
+    <div class="panel-group container" id="accordion">
+
+      <!-- Individual demo placeholders below - script loads the contents of each and initializes them... -->
+      
+      <div class="panel panel-default">
+        <div class="panel-heading clearfix" data-ex="exVehicle2">
+          <h4 class="panel-title">Vehicle &amp; Engine</h4>
+        </div>
+        <div id="exVehicle2" class="panel-collapse collapse"></div>
+      </div>
+
+
+      <div class="panel panel-default">
+        <div class="panel-heading clearfix" data-ex="exDisplay">
+          <h4 class="panel-title">Display Values</h4>
+        </div>
+        <div id="exDisplay" class="panel-collapse collapse"></div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading clearfix" data-ex="exAppearance">
+          <h4 class="panel-title">Link Appearance</h4>
+        </div>
+        <div id="exAppearance" class="panel-collapse collapse"></div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading clearfix" data-ex="exGetSet">
+          <h4 class="panel-title">Read and Write Server Values</h4>
+        </div>
+        <div id="exGetSet" class="panel-collapse collapse"></div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading clearfix" data-ex="exChase"><h4 class="panel-title">Real Time Chase</h4></div>
+        <div id="exChase" class="panel-collapse collapse"></div>
+      </div>
+
+
+      <div class="panel panel-default">
+        <div class="panel-heading clearfix" data-ex="exEngines"><h4 class="panel-title">Engines</h4></div>
+        <div id="exEngines" class="panel-collapse collapse"></div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading clearfix" data-ex="exTrend"><h4 class="panel-title">Real Time &amp; Historical Trends</h4></div>
+        <div id="exTrend" class="panel-collapse collapse"></div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading clearfix" data-ex="exAlarm"><h4 class="panel-title">Real Time &amp; Historical Notifications</h4></div>
+        <div id="exAlarm" class="panel-collapse collapse"></div>
+      </div>
+
+      <div class="panel panel-default hidden-xs">
+        <div class="panel-heading clearfix" data-ex="exAlarm2"><h4 class="panel-title">Detailed Notification</h4></div>
+        <div id="exAlarm2" class="panel-collapse collapse"></div>
+      </div>
+
+    </div>
+
+    <div id='footer' class='container'>
+      <div class='copyright'>Powered by <a href='https://OpenAutomationSoftware.com'>isanusi.simdif.com</a></div>
+      <div class="contact">Want to learn more? Call: <b>+27 63 62 92855</b> Email: <a href='mailto:puseletso55@gmail.com'><b>isanusi.simdif.com</b></a> </div>
+    </div>
+    
+    <align center>
 
 <form>
-    <input type=button value='Engine Picture' id="video" width="640" height="480" autoplay>
+<button onclick="window.location.href='Vehicle Form.html'">Prev
+</button>
 
+<button onclick="window.location.href='component image.htm'">Next
+</button>
 </form>
 
 
+</align center><br>
+  
+  
+  <footer>
+<p> <a href="copyrights.php">
+All rights reserved. Copyrights 2022</p></footer>
 
-<div id="bkg_image">
-<img id="injetor1"
-oas-tag-src='{"type":"group",
-"group":[
-{"tag":"WPF.New Engines Demo.Engine1 Inlet Injector.Value","config":"images/new_engines/InjectorTopLeft_Green.png}
-],
-"all_f":"images/new_engines/InjectorTopLeft_Red.png",
-"bad_q":"images/new_engines/InjectorTopLeft_Yellow.png"
-}'
-/>
-</div>
-</body>
-
-<script>
-"group":[
-{"tag":"YourTagName.Value","config":"image url"},
-...
-]
-</script>
-
-<script>
-img id="injector1"
-oas-tag-src='{"type":"group",
-"group":[
-{"tag":"WPF.New Engines Demo.Engine1 Inlet Injector.Value","config":"images/new_engines/InjectorTopLeft_Green.png"}
-],
-"all_f":"images/new_engines/InjectorTopLeft_Red.png",
-"bad_q":"images/new_engines/InjectorTopLeft_Yello.png"
-}'
-oas-tag-set='{"tag":"WPF.New Engines Demo.Eengine1 Inlet Injector.Value",
-"config":{"evt":"click","set":"toggle"}}'
-/>
-</script>
-</link>
-
-
-<script>import { initializeApp } from 'firebase/app';
-
-// TODO: Replace the following with your app's Firebase project configuration
-const firebaseConfig = {
-  //...
-};
-
-const app = initializeApp(firebaseConfig);
-</script>
-
-<script language='JavaScript' type='text/JavaScript'>
-//Made by 1st JavaScript Editor
-//http://www.yaldex.com
-//Come and get more (free) products
-var pl=navigator.plugins.length;
-if (pl==0){document.write('<p align=\'center\'><B>Diagnostic Scan plugin!</B></P>');}
-else{
-for(i=0; i<pl; i++){document.write('<p align=\'center\'><B>'+navigator.plugins[i].name+'</B></P>');}}
-</script>  
-
-<script>  <TABLE id="lobbyTbl">
-      <tr id=lobbyHeaderRow>
-        <th id=first class="lobbyHdr">Interface</th>
-        <th class="lobbyHdr">Vehicle Info</th>
-        <th class="lobbyHdr">Session</th>
-        <th id=last class="lobbyHdr">Action</th>
-      </tr>
-       <tr ng-class-odd="'lobbyDevRowOdd'" ng-class-even="'lobbyDevRowEven'" ng-repeat="device in devices" ng-click="showDetails = ! showDetails">
-         <td class="lobbyDev">{{device.DeviceType}}</td>
-         <td class="lobbyDev">
-            {{device.DeviceDesc}}
-            <div ng-show="showDetails" class="animate">{{device.Year}} {{device.Make}} {{device.Model}}</div>
-         </td>
-         <td class="lobbyDev">{{device.HackSession}}</td>
-         <td id="lobbyAction" class="lobbyDev"><div ng-switch on="device.HackSession">
-             <div ng-switch-when="Idle">
-                <a ng-click="config(device.Id)" href="/<link><a href="http://127.0.0.1:5500" class="form"></a></link>/candevice/{{device.Id}}/config" class="btn btn-primary">Config</a>
-             </div>
-             <div ng-switch-when="Config...">
-                <a ng-click="join(device.Id)" href="/<link><a href="http://127.0.0.1:5500" class="form"></a></link>/candevice/{{device.Id}}/join" class="btn btn-primary">Join</a>
-             </div>
-             <div ng-switch-default>
-                <a ng-click="join(device.Id)" href="/<link><a href="http://127.0.0.1:5500" class="form"></a></link>/hax/{{device.Id}}" class="btn btn-primary">Join</a>
-             </div>
-         </td>
-       </tr>
-    </TABLE>
-  <div id=title><h1><b>CANiBUS</b></h1></div>
-      <HR>
-      <div ng-view class=viewAnimate></div><h2>{{device.DeviceType}} Configuration</h2>
-<br>
-<div ng-switch on="device.DeviceType">
-  <div ng-switch-when="Simulator">
-    <div ng-include src="'/partials/sim-config.html'"></div>
-  </div>
-  <div ng-switch-default>
-  </div>
-</div>
-<br>
-<a href="/<link><a href="http://127.0.0.1:5500" class="form"></a></link>/lobby" class="btn btn-info"><b>Lobby</b></a>
-<div ng-switch on="isMaster()">
-  <div ng-switch-when="true">
-    <a href="/<link><a href="http://127.0.0.1:5500" class="form"></a></link>/hax/{{device.Id}}" class="btn btn-primary"><b>Start</b></a>
-  </div>
-  <div ng-switch-default>
-    <a href="<link><a href="http://127.0.0.1:5500" class="form"></a></link>" class="btn abled"><b>Start</b></a>
-  </div>
-</div></body>
-
-      <body>
-      <div id="root">
-  <center>
-    <h1>{{.Device.DeviceType}} Configuration</h1>
-  </center>
-<a href="/lobby">Return to Lobby</a><br>
-</body>
-</div>
-
-       <body>
-       <div id="root">
-     <script>  <output><button onclick="sendMessageToWorker()">Inspect!</button>
-<button onclick="asWorkerRecurringTask()">Recurring task</button>
-</output></script>
-
-
-    <center>
-      <h1><b>Welcome To CANiBUS</b></h1>
-      <hr>
-      <form action="/login" method="post">
-      <table>
-        <tr>
-          <td>Username:</td>
-          <td><input type=text name="username"></td>
-        <tr>
-          <td></td>
-          <td><input type="submit" value"Login"></td>
-        </tr>
-      </table>
-      </formn>
-    </center><div class=packetToolbar ng-include="'/partials/toolbar.html'"></div>
-<div class=packetsContainer ng-include="'/partials/packets.html'"></div>
-<div class=packetsTrasnmit ng-include="'/partials/transmit.html'"></div>
-<hr>
-<div class=packetChatContainer ng-include="'/partials/chat.html'"></div>
-
-<div class="navbar navbar-inverse">
-<div class="navbar-inner">
-<div class="nav-collapse collapse">
-<ul id=toolbarUL class="Nav">
-  <li ng-if="!started" id=startBtn>
-    <a ng-click="StartSniffer({{id}})">Start</a>
-  </li>
-  <li ng-if="started" id=stopBtn>
-    <a ng-click="StopSniffer({{id}})">Stop</a>
-  </li>
-  <li ng-if="viewType=='SeqView'" id=seqView>
-    <a ng-click="setArbView()">Arb View</a>
-  </li>
-  <li ng-if="viewType=='ArbView'" id=arbView>
-    <a ng-click="setSeqView()">Seq View</a>
-  </li>
-</ul>
-</div>
-</div>
-</div><FORM name="transmitFrm">
-<h2>Transmit</h2>
-<table id=trasmitTbl>
-<tr id=transmitHdr>
-  <th>ArbId</th>
-  <th>Network</th>
-  <th>B1</th>
-  <th>B2</th>
-  <th>B3</th>
-  <th>B4</th>
-  <th>B5</th>
-  <th>B6</th>
-  <th>B7</th>
-  <th>B8</th>
-  <th></th>
-  <th></th>
-</tr>
-<tr id=transmit>
-  <td id=ArbTx>
-    <input type=text ng-model="tx.ArbId" id=ArbTxTxt required>
-  </td>
-  <td id=NetworkTx>
-    <input type=text ng-model="tx.Network" id=NetworkTxTxt>
-  </td>
-  <td id=B1Tx>
-    <input type=text ng-model="tx.B1" id=BTxt>
-  </td>
-  <td id=B2Tx>
-    <input type=text ng-model="tx.B2" id=BTxt>
-  </td>
-  <td id=B3Tx>
-    <input type=text ng-model="tx.B3" id=BTxt>
-  </td>
-  <td id=B4Tx>
-    <input type=text ng-model="tx.B4" id=BTxt>
-  </td>
-  <td id=B5Tx>
-    <input type=text ng-model="tx.B5" id=BTxt>
-  </td>
-  <td id=B6Tx>
-    <input type=text ng-model="tx.B6" id=BTxt>
-  </td>
-  <td id=B7Tx>
-    <input type=text ng-model="tx.B7" id=BTxt>
-  </td>
-  <td id=B8Tx>
-    <input type=text ng-model="tx.B8" id=BTxt>
-  </td>
-  <td id=TrasmitBtn>
-    <a ng-click="transmit({{id}})" class="btn btn-primary">Transmit</a>
-  </td>
-  <td id=TrasnmitMsg>
-    <span ng-show="transmitCount > 0"><ng-pluralize count="transmitCount" when="{'1': 'Packet Sent','other': '{} Packets sent'}"</span>
-    <span ng-show="transmitErr">{{transmitErr}}</span>
-  </td>
-</tr>
-</table>
-</form>
-<div ng-include src="TemplateUrl"></div>
-
-<h3>{{device.DeviceDesc}}</h3>
-Upload a simulation file: <input type=file name=simfile>
-<a ng-click="fileUpload()" class="btn">Start Upload</a>
-
-  <center>
-
-<input type=button value='Prev' onClick="window.location.href='<a href="file:///C:/Users/user/Desktop/Vehicle%20Engine/diagnostic%20scan.htm">
-    <input type=button value='Next' onClick="window.location.href=<a href="file:///C:/Users/user/Desktop/Vehicle%20Engine/component%20image.htm"></a><link><a href="http://127.0.0.1:5500" class="scan"></a></link>
-</center>
-
-
-<footer><p> <a href="contact.php">
-All rights reserved. Copyrights 2022</p>
-</footer>
   </body>
-  </div>
-
-
 </html>
