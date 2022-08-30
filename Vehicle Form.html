@@ -262,6 +262,13 @@ content="width=device-width,initial-scale=1,shrink-to-fit=no"/>
  <header id="form"></header>
 <div id="root">
 
+<script>
+document.getElementById("image.html").innerHTML=
+document.getElementById("Vehicle Form.html").innerHTML=
+document.getElementById("diagnostic scan.htm").innerHTML=
+document.getElementById("inspector notes.htm").innerHTML;
+</script>
+
 <script>import { initializeApp } from 'firebase/app';
 
 // TODO: Replace the following with your app's Firebase project configuration
@@ -292,16 +299,20 @@ Model:
     <input type=submit value="Submit Form"><br>
 </form>
 
-<center>
+<align center>
+
 <form>
+<button onclick="window.location.href='image.html'">Prev
+</button>
 
-
-  <input type=button value='Prev' onClick="window.location.href='<a href="file:///C:/Users/user/Desktop/Vehicle%20Engine/Vehicle%20Form.html">
-    <input type=button value='Next' onClick="window.location.href='<a href="file:///C:/Users/user/Desktop/Vehicle%20Engine/diagnostic%20scan.htm"><link><a href="http://127.0.0.1:5500" class="form"></a></link>
+<button onclick="window.location.href='diagnostic scan.htm'">Next
+</button>
 </form>
-</center>
 
-    <footer><p> <a href="contact.php">
+
+</align center>
+
+    <footer><p> <a href="copyrights.php">
     All rights reserved. Copyrights 2022</p>
 </footer>
 </body>
