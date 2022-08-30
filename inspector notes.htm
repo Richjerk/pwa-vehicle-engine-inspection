@@ -245,6 +245,13 @@ The Foreseer...</font></b></p>
  <header id="Inspector Notes"></header>
 <div id="root">
 
+<script>
+document.getElementById("image.html").innerHTML=
+document.getElementById("Vehicle Form.html").innerHTML=
+document.getElementById("diagnostic scan.htm").innerHTML=
+document.getElementById("inspector notes.htm").innerHTML;
+</script>
+
 <script>import { initializeApp } from 'firebase/app';
 
 // TODO: Replace the following with your app's Firebase project configuration
@@ -263,9 +270,16 @@ const app = initializeApp(firebaseConfig);
 <a href ='mailto:puseletso55@gmail.com?subject=Vehicle Inspection Complete &cc=puseletso55@outlook.com'>Email Client!</a>
 
 
+<align center>
 
-<form><input type=button value='Prev' onClick="window.location.href='<a href="file:///C:/Users/user/Desktop/Vehicle%20Engine/inspector%20notes.htm"</a><link><a href="http://127.0.0.1:5500" class="notes"></a></link>
-></form>
+<form>
+<button onclick="window.location.href='component image.htm'">Prev
+</button>
+</form>
+
+
+</align center>
+
 <form name="agrform" onSubmit="return first2(this)">Remainder of your form here<br>
     <input name="agrcheck" type="checkbox" onClick="fifteenth(this)"><b>I agree to these terms</b><br>
     <input type="Submit" value="Submit" disabled>
@@ -275,7 +289,7 @@ const app = initializeApp(firebaseConfig);
 document.forms.agrform.agrcheck.checked=false;
 </script>
 
-<footer><p> <a href="contact.php">
+<footer><p> <a href="copyrights.php">
 All rights reserved. Copyrights 2022</p>
 </footer>
 </body>
