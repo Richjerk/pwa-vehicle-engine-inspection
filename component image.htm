@@ -212,10 +212,16 @@ text-align:center;
 <body>
 <div id="root">
 
-<p><b>Click on the "<font color="windowtext" size="3" face="Mongolian Baiti">Choose Image File</font>" button to upload a file:</b></p>
+<script>
+document.getElementById("image.html").innerHTML=
+document.getElementById("Vehicle Form.html").innerHTML=
+document.getElementById("diagnostic scan.htm").innerHTML=
+document.getElementById("inspector notes.htm").innerHTML;
+</script>
+
 
 <form
-action="/action_page.php">
+action="/component_image.php">
 <input type="button"
 value='Upload Image'
 id="componentImage"
@@ -225,14 +231,21 @@ type="submit">
 </form>
 
 
+<align center>
+
 <form>
-<input type=button value='Prev' onClick="window.location.href='<a href="file:///C:/Users/user/Desktop/Vehicle%20Engine/component%20image.htm">
-    <input type=button value='Next' onClick="window.location.href='<a href="file:///C:/Users/user/Desktop/Vehicle%20Engine/inspector%20notes.htm"></a><link><a href="http://127.0.0.1:5500" class="inspector notes"></a></link>
+<button onclick="window.location.href='diagnostic scan.htm'">Prev
+</button>
+
+<button onclick="window.location.href='inspector notes.htm'">Next
+</button>
 </form>
+
+
 </align center>
 
 <footer><p>
- <a href="contact.php">
+ <a href="copyrights.php">
  All rights reserved. Copyrights 2022</p>
 </footer>
 </body>
@@ -240,4 +253,3 @@ type="submit">
 
 
 </html>
-};
