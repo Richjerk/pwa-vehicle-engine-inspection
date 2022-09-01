@@ -4,26 +4,70 @@
 
 <head>
 
+<style>
 
- <script src="https://www.google.com/recaptcha/api.js"></script>
-  <script>
-   function onSubmit(token) {
-     document.getElementById("demo-form").submit();
-   }
- 
- <button class="g-recaptcha" 
-        data-sitekey="reCAPTCHA_site_key" 
-        data-callback='onSubmit' 
-        data-action='submit'>Submit</button> </script>
+body{
+background-color:silver
+}
 
-    
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <form>
-  <label for="file-upload" class="custom-file-upload">
-  <i class="fa fa-cloud-upload"></i>
-  </label>
-  <input id="file-upload" name='upload_cont_img' type="file" style="display:none;">
-  </form>
+p{
+color:black;
+font-size:15px;
+}
+</style>
+
+
+
+<link rel="manifest"
+href="manifest.json">
+<meta name="mobile-web-app-capable"content="yes"/>
+<meta name="apple-mobile-web-app-capable"content="yes"/>
+<meta name="apple-mobile-web-app-title"content="Vehicle Engine Inspection"/>
+<meta name="application-name"content="Vehicle Engine Inspection"/>
+<meta name="msapplication-starturl"content="/index.html"/>
+<meta name="viewport"
+content="width=device-width,initial-scale=1,shrink-to-fit=no"/>
+
+<meta charset="utf-8"/>
+<meta name="viewport"
+content="width=device-width, initial-scale=1"/>
+<title>Vehicle Engine</title>
+
+
+<h1><font color="windowtext" size="5"face="Imprint MT Shadow">iSANUSI Vehicle Engine Inspection!</font></h1>
+<style>
+p{
+color: royal blue;
+font-family:'comic sans Ms', bold;
+font-size: zem;
+}
+</style>
+
+<p><b><font color="windowtext" size="3"face="Modern No. 20">iSanusi Industrial AR Technology
+
+The Foreseer...</font></b></p>
+
+
+</head>
+
+<body>
+ <header id="Component Image"></header>
+<div id="component image.htm">
+
+<script src="component image.htm_jsonp.php">
+
+<script>
+document.getElementById("image.html").innerHTML=
+document.getElementById("Vehicle Form.html").innerHTML=
+document.getElementById("diagnostic scan.htm").innerHTML=
+document.getElementById("inspector notes.htm").innerHTML;
+</script>
+
+<script src="main.js">
+<title>Vehicle Inspection</title></script>
+
+<script>
+let name='iSANUSI';</script>
 
 <script>
 import axios from 'axios';
@@ -39,7 +83,7 @@ const[formStatus,setFormStatus]
 =useState(false);
 const[query,setQuery]=
 useState({
-name:"Puseletso"
+name:"Component"
 
 });
 
@@ -97,77 +141,89 @@ console.log(error);
 export default Form
 </script>
 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+  <form>
+  <label for="file-upload" class="custom-file-upload">
+  <i class="fa fa-cloud-upload"></i>
+  </label>
+  <input id="file-upload" name='upload_cont_img' type="file" style="display:none;">
+  </form></script>
 
 
-<style>
+ <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script>
+   function onSubmit(token) {
+     document.getElementById("demo-form").submit();
+   }
+ 
+ <button class="g-recaptcha" 
+        data-sitekey="reCAPTCHA_site_key" 
+        data-callback='onSubmit' 
+        data-action='submit'>Submit</button> </script>
 
 
 
-body{
-background-color:silver
-}
+<script src="path/to/my/script.js"></script>
 
-p{
-color:black;
-font-size:15px;
-}
-</style>
-
-
-
-<link rel="manifest"
-href="manifest.json">
-<meta name="mobile-web-app-capable"content="yes"/>
-<meta name="apple-mobile-web-app-capable"content="yes"/>
-<meta name="apple-mobile-web-app-title"content="Vehicle Engine Inspection"/>
-<meta name="application-name"content="Vehicle Engine Inspection"/>
-<meta name="msapplication-starturl"content="/index.html"/>
-<meta name="viewport"
-content="width=device-width,initial-scale=1,shrink-to-fit=no"/>
-
-<meta charset="utf-8"/>
-<meta name="viewport"
-content="width=device-width, initial-scale=1"/>
-<title>Vehicle Engine</title>
-
-<script src="main.js"></script>
-<title>Vehicle Inspection</title>
-
-
-<script language='JavaScript' type='text/JavaScript'>
-//Made by 1st JavaScript Editor
-//http://www.yaldex.com
-function fifteenth(sixteenth){	var seventeenth = Array("FirstName", "LastName");	var eighteenth = Array("First Name", "Last Name");	var nineteenth = "Please complete these fields:\n";	var twentieth = nineteenth.length;	for (var first2 = 0; first2 < seventeenth.length; first2++){		var second2 = sixteenth.elements[seventeenth[first2]];
-if (second2){			switch(second2.type){			case "select-one":
-if (second2.selectedIndex == -1 || second2.options[second2.selectedIndex].text == ""){					nineteenth += " - " + eighteenth[first2] + "\n";				}				break;			case "select-multiple":
-if (second2.selectedIndex == -1){					nineteenth += " - " + eighteenth[first2] + "\n";				}				break;			case "text":			case "textarea":
-if (second2.value == "" || second2.value == null){					nineteenth += " - " + eighteenth[first2] + "\n";				}				break;			default:			}
-if (second2.type == undefined){				var third2 = false;				for (var fourth2 = 0; fourth2 < second2.length; fourth2++){
-if (second2[fourth2].checked){						third2 = true;					}				}
-if (!third2){					nineteenth += " - " + eighteenth[first2] + "\n";				}			}		}	}
-if (nineteenth.length == twentieth){		return true;	}else{		alert(nineteenth);		return false;	}}
-</script>
 <script>
-let name='iSANUSI';</script>
-<h1><font color="windowtext" size="5"face="Imprint MT Shadow">iSANUSI Vehicle Engine Inspection!</font></h1>
-<style>
-p{
-color: royal blue;
-font-family:'comic sans Ms', bold;
-font-size: zem;
+window.addEventListener('load', () => {
+  console.log('This function is executed once the page is fully loaded');
+});
+</script>
+
+<script>
+<button onclick="myFunction()">Go Back</button>
+function myFunction() {
+  window.history.back();
 }
-</style>
+</script>
 
-<p><b><font color="windowtext" size="3"face="Modern No. 20">iSanusi Industrial AR Technology
+<script>async function getText(file) {
+  let myObject = await fetch(file);
+  let myText = await myObject.text();
+  myDisplay(myText);
+}</script>
 
-The Foreseer...</font></b></p>
+<script>async function getText(file) {
+  let myObject = await fetch(file);
+  let myText = await myObject.text();
+  myDisplay(myText);
+}</script>
 
+<script>function showComponent(str) {
+  if (str == "") {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  }
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("txtHint").innerHTML = this.responseText;
+  }
+  xhttp.open("GET", "getcomponent.php?q="+str);
+  xhttp.send();
+}</script>
 
-</head>
+<script>
+document.getElementById("component image.htm").innerHTML = obj.name;
+</script>
 
-<body>
- <header id="Component Image"></header>
-<div id="root">
+<script>const xmlhttp = new XMLHttpRequest();
+xmlhttp.onload = function() {
+  const myObj = JSON.parse(this.responseText);
+  document.getElementById("demo").innerHTML = myObj.name;
+}
+xmlhttp.open("GET", "component.php");
+xmlhttp.send();</script>
+
+<script>const limit = {"limit":10};
+const dbParam = JSON.stringify(limit);
+xmlhttp = new XMLHttpRequest();
+xmlhttp.onload = function() {
+  document.getElementById("component image.htm").innerHTML = this.responseText;
+}
+xmlhttp.open("GET","json_component image.htm_db.php?x=" + dbParam);
+xmlhttp.send();</script>
+
 
 <script>import { initializeApp } from 'firebase/app';
 
@@ -178,6 +234,135 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 </script>
+
+<script>
+import axios from 'axios';
+import React,{useState}from
+"react"
+import
+'bootstrap/dist/css/bootstrap.min.css';
+
+const GETFORM_FORM_ENDPOINT="YOUR-FORM-ENDPOINT";
+
+function Form(){
+const[formStatus,setFormStatus]
+=useState(false);
+const[query,setQuery]=
+useState({
+name:"Puseletso"
+email:"puseletso55@gmail.com",
+});
+
+const handleFileChange=()=>(e)
+=>{
+setQuery((prevState)=>({
+...prevState,
+files:e.target.files[0]
+})));
+};
+
+const handleChange=()=>
+{
+const name=e.target.name;
+const value=e.target.value;
+setQuery((prevState)=>({
+...prevState,
+[name]:value
+}));
+};
+
+const handleSubmit=(e)=>{
+e.preventDefault();
+const formData=new
+FormData();
+
+Object.entries(query).forEach(([key,
+value])=>{
+formData.append(key,
+value);
+});
+
+axios
+.post(
+GETFORM_FORM_ENDPOINT,
+formData,
+{headers:{Accept:
+"application/json"}}
+)
+.then(function(response)
+{
+setFormStatus(true);
+setQuery({
+name:"Puseletso",
+email:"puseletso55@gmail.com",
+});
+console.log(response);
+})
+.catch(function(error){
+console.log(error);
+});
+);
+return(
+<div class="container-md">
+<h2>Gatsby File Upload Form Using Getform,io</h2>
+<form
+acceptCharset="UTF-8"
+method="POST"
+enctype="multipart/form-data"
+id="gatsbyForm"
+onSubmit={handleSubmit}
+>
+<div className="form-group mb-2">
+<label for="puseletso55@gmail.com">Email
+address</label>
+<input
+type="email"
+className="form-group mb-2">
+<label for="puseletso55@gmail.com">Email
+address</label>
+<input
+type="email"
+className="form-control"
+placeholder="Enter your email"
+required
+name="email"
+value={query.email}
+onChange={handleChange()}
+/>
+</div><div className="form-group mb-2">
+<label
+for="exampleInputName">Faulty Component(s)</label>
+<input
+type="text"
+className="form-control"
+placeholder="Enter component name"
+required
+name="name"
+value={query.name}
+onChange={handleChange()}
+/>
+</div> mt-3">
+<label className="mr-2">Upload faulty component image:</label>
+<input name="file" type="file"
+onChange={handleFileChange()}/>
+</div>
+<hr/>
+{formStatus?(
+<div className="text-success mb-2">
+Your message has been sent.
+</div>
+):(
+""
+)}
+<button type="submit" className="btn btn-
+primary">Submit</button>
+</form>
+</div>
+);
+}
+export default Form
+</script>
+
 
 
 <align center>
@@ -245,7 +430,7 @@ type="submit">
 </align center>
 
 <footer><p>
- <a href="copyrights.php">
+ <a href="contact.php">
  All rights reserved. Copyrights 2022</p>
 </footer>
 </body>
